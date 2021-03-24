@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    container_name: projectscope 
+    environment:
+      POSTGRES_DB: projectscope
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+    volumes: 
+      - projectscope_vol:/var/lib/postgresql/data
+    ports: 
+      - 5432:5432
+      
+volumes: 
+  projectscope_vol:
+    name: projectscope_vol 
+    
